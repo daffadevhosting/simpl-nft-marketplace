@@ -238,7 +238,7 @@ export default function ListingPage() {
               Buy
             </Button>
         ) : (<>
-<Tooltip  className={css.pulse} label='Your wallet not connected' bg='red' color='white'>
+<Tooltip className={css.pulse} label='Your wallet not connected' bg='red' color='white'>
             <Button w={200} bg={'grey'} color={'white'} alignSelf={'flex-end'} fontWeight={600} p={2} rounded={'md'} isDisabled>
               Buy
             </Button>
