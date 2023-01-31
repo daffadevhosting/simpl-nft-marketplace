@@ -1,0 +1,64 @@
+
+// Mobile breakpoints
+@mixin mobile {
+  @media screen and (max-width: 747px) {
+    @content;
+  }
+}
+
+.metamask {
+    background-image: url('../public/icons/metamask.svg');
+    display: block;
+    width: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+    cursor: pointer;
+}
+
+.walletconnect {
+    background-image: url('../public/icons/walletconnect.svg');
+    display: block;
+    width: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+    cursor: pointer;
+}
+
+.coinbase {
+    background-image: url('../public/icons/coinbase.svg');
+    display: block;
+    width: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+    cursor: pointer;
+}
+
+.none {
+    display: none !important;
+}
+
+.glassBackground {
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.52);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+}
+
+.boxShadow {
+    box-shadow: 0px 2px 3px rgb(0 0 0 / 7%), 0px 6px 6px rgb(0 0 0 / 4%), 0px 12px 12px rgb(0 0 0 / 3%), 0px 20px 24px rgb(0 0 0 / 3%), 0px 32px 40px rgb(0 0 0 / 2%), 0px 80px 100px rgb(0 0 0 / 16%), 0px 0px 4px rgb(0 0 0 / 8%), 0px 8px 48px rgb(0 0 0 / 8%);
+}
+
+.nftList:hover {
+    transform: translateY(-80px) matrix(0.99, -0.15, 0.15, 0.99, 0, 0);
+    box-shadow: 0px 2px 3px rgb(0 0 0 / 7%), 0px 6px 6px rgb(0 0 0 / 4%), 0px 12px 12px rgb(0 0 0 / 3%), 0px 20px 24px rgb(0 0 0 / 3%), 0px 32px 40px rgb(0 0 0 / 2%), 0px 80px 100px rgb(0 0 0 / 16%), 0px 0px 4px rgb(0 0 0 / 8%), 0px 8px 48px rgb(0 0 0 / 8%);
+    transition: all .8s ease;
+@include mobile {
+    transform: translateY(-5px) matrix(0.99, -0.15, 0.15, 0.99, 0, 0);
+    box-shadow: 0px 2px 3px rgb(0 0 0 / 7%), 0px 6px 6px rgb(0 0 0 / 4%), 0px 12px 12px rgb(0 0 0 / 3%), 0px 20px 24px rgb(0 0 0 / 3%), 0px 32px 40px rgb(0 0 0 / 2%), 0px 80px 100px rgb(0 0 0 / 16%), 0px 0px 4px rgb(0 0 0 / 8%), 0px 8px 48px rgb(0 0 0 / 8%);
+    transition: all .8s ease;
+        }
+    }

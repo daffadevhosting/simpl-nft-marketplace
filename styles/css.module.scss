@@ -1,0 +1,581 @@
+@import './variable';
+@import './modals';
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.fixed {
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    width: 100%;
+    background-color: rgb(0 0 0 / 50%);
+}
+
+.container {
+  margin-top: 64px;
+  width: 100%;
+}
+
+.collectionContainer {
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 30px;
+@include mobile {
+margin-top: 0;
+    }
+}
+
+.ourCollection {
+  font-size: 1.5rem;
+  padding-bottom: 20px;
+}
+
+.textInput {
+  width: 75%;
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 8px;
+  height: 48px;
+  padding: 0 16px;
+  font-size: 1rem;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.imageInput {
+  width: 100%;
+  height: 100%;
+  border: 1px dashed grey;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+  cursor: pointer;
+@include mobile {
+  height: 350px;
+ }
+}
+
+.previewImage {
+  height: 500px;
+  width: 500px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  padding: 8px;
+}
+
+.mintInfoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 24px;
+  min-height: 720px;
+  max-width: 95vw;
+  gap: 2%;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+}
+
+.infoSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  height: 100%;
+}
+
+.description {
+  opacity: 0.7;
+  font-size: 1rem;
+}
+
+.imageSide {
+  width: 45%;
+  height: 100%;
+}
+
+.image {
+  width: 85%;
+  border-radius: 16px;
+}
+
+.mainButton {
+  cursor: pointer;
+  display: inline-flex;
+  appearance: none;
+  align-items: center;
+  -webkit-box-align: center;
+  justify-content: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  line-height: 1.2;
+  font-weight: 600;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-duration: 200ms;
+  height: 3rem;
+  min-width: 3rem;
+  font-size: 1rem;
+  background: #e5e5ea;
+  background-image: linear-gradient(
+    to left,
+    var(--color-primary) 0%,
+    var(--color-secondary) 101.52%
+  );
+  color: #fff;
+  width: 180px;
+  text-align: center;
+  border-radius: 9999px;
+  border-style: none;
+}
+
+.mainButton:hover {
+  opacity: 0.8;
+}
+
+.mintCompletionArea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  background-color: #262936;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 72px;
+  margin-bottom: 96px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-left: 5%;
+  gap: 5%;
+}
+
+.headerLogo {
+  width: 135px;
+  cursor: pointer;
+}
+
+.verticalSpacer {
+  color: grey;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.headerItem {
+  font-size: 1rem;
+  color: inherit;
+  font-weight: bold;
+  margin-left: 16px;
+}
+
+.right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-right: 5%;
+}
+
+.mintAreaLeft {
+  margin-left: 5%;
+  opacity: 0.75;
+}
+
+.mintAreaRight {
+  margin-right: 5%;
+  opacity: 0.75;
+}
+
+.spacerTop {
+  margin-top: 16px;
+}
+
+.spacerBottom {
+  margin-bottom: 16px;
+}
+
+.buttonGapTop {
+  cursor: pointer;
+  margin-top: 32px;
+}
+
+.quantityContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+}
+
+.textInput {
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 8px;
+  height: 40px;
+  padding: 0 16px;
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+.quantityControlButton {
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 2rem;
+  background-color: transparent;
+  border: 1px solid grey;
+  color: #fff;
+}
+
+.quantityControlButton:disabled {
+  opacity: 0.25;
+}
+
+.divider {
+  width: 50%;
+  border-color: grey;
+  opacity: 0.25;
+}
+
+.smallDivider {
+  width: 25%;
+  border-color: grey;
+  margin-top: 64px;
+  opacity: 0.25;
+}
+
+.widthDivider {
+  width: 100%;
+  border-color: grey;
+  margin-top: 24px;
+  opacity: 0.25;
+
+}
+
+.flexCenter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.nftBoxGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 30px;
+    padding: 35px 0;
+    margin-bottom: 105px !important;
+    height: 100%;
+    max-width: 1250px;
+    margin: auto;
+    margin-top: 540px !important;
+@include mobile {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 0;
+    margin-top: 250px !important;
+ }
+}
+
+.nftStakeBox {
+    border-radius: 8px;
+    border: solid 1px rgb(50 53 61 / 40%);
+    width: 100%;
+    max-height: 212px;
+    padding: 4px;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.stakingGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+@include mobile {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 5px;
+    }
+}
+
+.nftStakeMedia {
+  object-fit: cover !important;
+  object-position: center !important;
+  width: 100%;
+  height: 150px;
+  max-height: 150px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 6px -2px #000;
+@include mobile {
+  height: 160px;
+    }
+}
+
+.objectCover {
+    object-fit: cover !important;
+    object-position: center !important;
+    height: 100%;
+    width: 100%;
+}
+
+.maxH {
+    max-height: 418px;
+    overflow-y: auto;
+}
+
+.nftBox {
+  border-radius: 8px;
+  width: 100%;
+  min-height: 200px;
+  padding: 4px;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.boxBorder {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    box-shadow: 0 0 13px -4px rgb(0 0 0 / 25%);
+}
+
+.nftMedia {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 15px;
+}
+
+.linkOpnsi {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+}
+
+.bannerContainer {
+    height: 80vh;
+    position: fixed;
+    width: 100%;
+@include mobile {
+    height: 30vh;
+    }
+}
+
+/* On mobile, make the .mintInfoContainer stack vertically */
+@media screen and (max-width: 850px) {
+  .mintInfoContainer {
+    flex-direction: column;
+    padding-bottom: 5%;
+  }
+
+  .infoSide {
+    width: 100%;
+  }
+
+  .imageSide {
+    width: 100%;
+  }
+}
+
+.loadingOrError {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+@include mobile {
+  height: 88vh;
+    }
+}
+
+.loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.listingContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 1200px;
+  max-width: 90vw;
+  gap: 20px;
+  margin-top: 5%;
+  height: 500px;
+}
+
+.leftListing {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainNftImage {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  max-width: 400px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.rightListing {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* On Mobile, change .listingContainer to be stacked vertically */
+@media screen and (max-width: 900px) {
+  .listingContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .leftListing {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .rightListing {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+.listingTypeContainer {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.listingType {
+  opacity: 0;
+  width: 0;
+  position: fixed;
+}
+
+.listingTypeLabel {
+  display: inline-block;
+  background-color: #262936;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #444;
+  border-radius: 4px;
+  border-radius: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.listingType:checked + label {
+  border: 3px solid transparent;
+  border-radius: 20px;
+  background: linear-gradient(to right, #262936, #262936),
+    linear-gradient(to right, #418dff, #cc25b3);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.maxWidth {
+  @include mobile {
+    width: 320px;
+    max-width: 320px;}
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation: pulse 1s infinite;
+  }
+  @-webkit-keyframes pulse {
+  0% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  50% {
+  -webkit-transform: scale3d(1.05, 1.05, 1.05);
+  transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  }
+  @keyframes pulse {
+  0% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  50% {
+  -webkit-transform: scale3d(1.05, 1.05, 1.05);
+  transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  }
+
+.miring {
+    position: absolute;
+    bottom: 21%;
+    left: 8%;
+    z-index: -1;
+    -webkit-transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
+    -moz-transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
+    -ms-transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
+    transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
+    transition: all .8s ease;
+@include mobile {
+    display: none !important;
+    }
+}
