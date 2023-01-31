@@ -129,8 +129,8 @@ const bgColor = useColorModeValue('white', 'gray.800');
   return (
 <>
     <Container maxW={'8xl'} py={{ base: 6, md: 12 }} mt={{ base: 6, md: 0 }}>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} mt={'8'}>
-        <Flex justify={'center'} overflow={'hidden'} borderRadius={'6'}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} mt={'8'} maxW={1250}ml={'auto'} mr={'auto'}>
+        <Flex justify={'center'} bg={'blueviolet'} overflow={'hidden'} borderRadius={'6'}>
           <Image
             h={500}
             maxW={'auto'}
@@ -138,11 +138,8 @@ const bgColor = useColorModeValue('white', 'gray.800');
             alt={'feature image'}
             src={IMAGE}
             objectFit={'cover'}
-            transform={'matrix(0.99, -0.15, 0.15, 0.99, 0, 0);'}
-            _hover={{
-            transform: 'matrix(0.99, 0.15, -0.15, 0.99, 0, 0) scale(1.3)',
-            transition: 'all .8s ease'
-                    }}
+            zIndex={0}
+            transform={{ base: 'matrix(0.99, 0.15, -0.15, 0.99, 0, 0);', md: 'matrix(0.99, -0.15, 0.15, 0.99, 0, 0);' }}
           />
           <Image
             className={css.miring}
@@ -152,6 +149,10 @@ const bgColor = useColorModeValue('white', 'gray.800');
             alt={'feature image'}
             src={IMAGE}
             objectFit={'cover'}
+            _hover={{
+            transform: 'matrix(0.99, 0.15, -0.15, 0.99, 0, 0) scale(1.3)',
+            transition: 'all .8s ease'
+                    }}
           />
         </Flex>
         <Stack spacing={4}>
