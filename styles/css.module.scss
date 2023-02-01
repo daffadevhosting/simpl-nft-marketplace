@@ -567,14 +567,14 @@ margin-top: 0;
 
 .miring {
     position: absolute;
-    bottom: 21%;
+    bottom: 9%;
     left: 8%;
     z-index: 0;
     -webkit-transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
     -moz-transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
     -ms-transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
     transform: matrix(0.99, 0.14, -0.14, 0.99, 0, 0);
-    transition: all .8s ease;
+    transition: all .3s ease;
 @include mobile {
     display: none !important;
     }

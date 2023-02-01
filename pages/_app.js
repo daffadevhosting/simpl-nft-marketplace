@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 import { ChakraProvider } from '@chakra-ui/react';
-import Head from 'next/head'
+import Head from 'next/head';
+import Script from 'next/script';
 import Header from "../components/Navbar";
 import "../styles/globals.css";
 
@@ -32,6 +33,7 @@ function MyApp({ Component, pageProps }) {
 <meta property="og:image" content="/icons/fav/apple-touch-icon.png" />
       </Head>
       <Header />
+<Script src="https://cdn.statically.io/gh/daffadevhosting/script/9e13c3721f597a707fd8dca50fc0701a9c621fdf/tilt.js" />
       <Component {...pageProps} />
     </ChakraProvider>
     </ThirdwebProvider>

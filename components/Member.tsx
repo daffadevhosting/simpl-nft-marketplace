@@ -142,6 +142,7 @@ const bgColor = useColorModeValue('white', 'gray.800');
             transform={{ base: 'matrix(0.99, 0.15, -0.15, 0.99, 0, 0);', md: 'matrix(0.99, -0.15, 0.15, 0.99, 0, 0);' }}
           />
           <Image
+            id={"tilt"}
             className={css.miring}
             h={500}
             maxW={'auto'}
