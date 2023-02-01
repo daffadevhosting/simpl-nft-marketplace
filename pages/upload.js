@@ -14,6 +14,16 @@ import {
   Image, Container,
   Flex, Stack, Button,
   useToast,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+  ButtonGroup
 } from '@chakra-ui/react';
 import { useRouter } from "next/router";
 import LoginModal from "../components/Login";
@@ -27,7 +37,8 @@ const Upload = () => {
   const networkMismatch = useNetworkMismatch();
   const [, switchNetwork] = useNetwork();
   const sdk = useSDK();
-  const alert = useToast()
+  const alert = useToast();
+  const initRef = React.useRef();
 
   const [creatingListing, setCreatingListing] = useState(false);
 
@@ -214,7 +225,7 @@ const Upload = () => {
     <form onSubmit={(e) => handleCreateListing(e)}>
       <div className={css.container}>
         <div className={css.collectionContainer}>
-    <Stack className={css.boxBorder} minH={'50vh'} direction={{ base: 'column', md: 'row' }} p={{ base: 2, md: 10 }} maxW={940} m={'auto'} w={'100%'}>
+    <Stack className={css.boxBorder} minH={'50vh'} h={{ base: '-webkit-fill-available', md: 435 }} direction={{ base: 'column', md: 'row' }} p={{ base: 2, md: 10 }} maxW={940} m={'auto'} w={'100%'}>
       <Flex flex={1}>
           {file ? (
             <Image
@@ -299,15 +310,48 @@ const Upload = () => {
               Auction Listing
             </label>
           </div>
-
-          <Button
-            type="submit"
-            bg={'blue'} color={'white'}
-            style={{ marginTop: 32, borderStyle: "none", margin: '32px auto' }}
-            disabled={creatingListing}
-          >
-            {creatingListing ? "Loading... Wait..." : "Mint + List NFT"}
-          </Button>
+        {address ? (
+<Popover isLazy closeOnBlur={false} placement='top-start' initialFocusRef={initRef}>
+      {({ isOpen, onClose }) => (
+        <>
+  <PopoverTrigger>
+    <Button bg={'blue'} color={'white'} disabled={creatingListing} _hover={{
+              transform: 'translateY(-2px)',
+              boxShadow: 'lg',
+              bg: 'blue.800',
+            }}>{creatingListing ? "Loading... Wait..." : "Mint + List NFT"}</Button>
+  </PopoverTrigger>
+  <PopoverContent>
+    <PopoverHeader fontWeight='semibold'>Confirmation</PopoverHeader>
+    <PopoverArrow />
+    <PopoverCloseButton />
+    <PopoverBody>
+      There will be at least 2 to 3 transactions for NFT uploads, do you agree?
+    </PopoverBody>
+          <PopoverFooter display='flex' justifyContent='flex-end'>
+            <ButtonGroup size='sm'>
+              <Button variant='outline'
+                  onClick={onClose}>Cancel</Button>
+              <Button type="submit" colorScheme='green' onClick={onClose}>Apply</Button>
+            </ButtonGroup>
+          </PopoverFooter>
+  </PopoverContent>
+        </>
+      )}
+</Popover>
+          ) : (
+          <div
+            textTransform={'uppercase'}
+            color={'white'}
+            fontWeight={600}
+            fontSize={'sm'}
+            bg={'red'}
+            p={2}
+            alignSelf={'center'}
+            rounded={'md'}>
+            Connect your wallet
+          </div>
+		)}
         </Stack>
       </Flex>
     </Stack>
@@ -315,7 +359,6 @@ const Upload = () => {
       </div>
     </form>
 <LoginModal />
-<Footer />
 </>
   );
 };

@@ -11,9 +11,6 @@ export default class Document extends NextDocument {
     <Head>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet" />
           <style>{`
-            html, body, #__next {
-              height: 100%;
-            }
             #__next {
               margin: 0 auto;
             }
