@@ -30,6 +30,7 @@ import {
   IoSearchSharp,
   IoSwapHorizontalOutline
 } from 'react-icons/io5';
+import Hover from "react-3d-hover";
 import { RiSignalWifiErrorLine } from "react-icons/ri";
 import React, { useContext, useState, ReactElement } from 'react';
 import { MEMBERPASS_CONTRACT_ADDRESS, MEMBER_CARD_PRICE } from "../const/contractAddresses";
@@ -130,7 +131,7 @@ const bgColor = useColorModeValue('white', 'gray.800');
 <>
     <Container maxW={'8xl'} py={{ base: 6, md: 12 }} mt={{ base: 6, md: 0 }}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} mt={'8'} maxW={1250}ml={'auto'} mr={'auto'}>
-        <Flex justify={'center'} bg={'blueviolet'} overflow={'hidden'} borderRadius={'6'}>
+        <Flex justify={'center'} overflow={'hidden'} borderRadius={'6'}>
           <Image
             h={500}
             maxW={'auto'}
@@ -141,11 +142,14 @@ const bgColor = useColorModeValue('white', 'gray.800');
             zIndex={0}
             transform={{ base: 'matrix(0.99, 0.15, -0.15, 0.99, 0, 0);', md: 'matrix(0.99, -0.15, 0.15, 0.99, 0, 0);' }}
           />
+<div className={css.miring}>
+      <Hover
+        perspective={500}
+        max ={6}>
           <Image
-            id="tilt"
-            className={css.miring}
             h={500}
-            maxW={'auto'}
+            w={'100%'}
+            maxW={'500px'}
             rounded={'md'}
             alt={'feature image'}
             src={IMAGE}
@@ -155,6 +159,8 @@ const bgColor = useColorModeValue('white', 'gray.800');
             transition: 'all .8s ease'
                     }}
           />
+      </Hover>
+</div>
         </Flex>
         <Stack spacing={4}>
           <Text

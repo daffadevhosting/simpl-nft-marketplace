@@ -49,6 +49,7 @@ import Loading from "../components/Spinner";
 import MintMember from "../components/Member";
 import LoginModal from "../components/Login";
 import Footer from "../components/Footer";
+import WarnPage from "../components/Warning";
 import css from "../styles/css.module.scss";
 
 const nftCollection = NFT_COLLECTION_ADDRESS;
@@ -152,7 +153,7 @@ const Stake: NextPage = () => {
   if (!address) {
     return (
 <>
-<Text className={css.loadingOrError}>You have to connect your wallet first</Text>
+<WarnPage />
 <LoginModal />
 </>
     );
@@ -214,9 +215,7 @@ const Stake: NextPage = () => {
 
       {!address ? (
 <>
-<Center>
-<Text>You have to connect your wallet first</Text>
-</Center>
+<WarnPage />
 <LoginModal />
 </>
       ) : (

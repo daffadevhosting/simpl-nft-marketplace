@@ -17,6 +17,7 @@ import {
   useContractMetadata,
   ThirdwebNftMedia,
 } from "@thirdweb-dev/react";
+import Hover from "react-3d-hover";
 import { MARKETPLACE_ADDRESS } from "../const/contractAddresses";
 import css from "../styles/css.module.scss";
 import LoginModal from "../components/Login"
@@ -125,7 +126,11 @@ export default function Listings() {
               filter: 'blur(20px)',
             },
           }}>
+      <Hover
+        perspective={800}
+        max ={8}>
                   <Image
+                    id="tilt"
                     src={`${listing.asset.image}`}
                     rounded={'lg'}
                     mb={{ base: 0, md: 10 }}
@@ -136,6 +141,7 @@ export default function Listings() {
                     alt='NFT listing'
                     className={css.nftList}
                   />
+      </Hover>
         </Box>
         <Stack pt={{ base: 6, md: 10 }} align={'center'}>
           <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>

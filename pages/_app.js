@@ -33,7 +33,6 @@ function MyApp({ Component, pageProps }) {
 <meta property="og:image" content="/icons/fav/apple-touch-icon.png" />
       </Head>
       <Header />
-<Script src="https://cdn.statically.io/gh/daffadevhosting/script/9e13c3721f597a707fd8dca50fc0701a9c621fdf/tilt.js" />
       <Component {...pageProps} />
     </ChakraProvider>
     </ThirdwebProvider>
