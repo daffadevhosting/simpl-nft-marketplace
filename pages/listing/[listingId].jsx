@@ -29,6 +29,7 @@ import {
   IoLogoBitcoin,
   IoSearchSharp,
 } from 'react-icons/io5';
+import Hover from "react-3d-hover";
 import LoginModal from "../../components/Login";
 import Loading from "../../components/Spinner";
 import css from "../../styles/css.module.scss";
@@ -162,12 +163,16 @@ export default function ListingPage() {
     <Container maxW={'5xl'} py={12} mt={{ base: 8, md: 50 }}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Flex maxH={{ base: 361, md: 476 }} h={'100%'}>
+      <Hover
+        perspective={800}
+        max ={8}>
           <MediaRenderer
             className={css.objectCover}
             src={listing.asset.image}
             objectFit={'cover'}
             alt={'NFT image'}
           />
+      </Hover>
         </Flex>
         <Stack spacing={4}>
           <Text
