@@ -128,7 +128,7 @@ export default function Listings() {
                   <Image
                     src={`${listing.asset.image}`}
                     rounded={'lg'}
-                    mb={10}
+                    mb={{ base: 0, md: 10 }}
                     height={{ base: 140, md: 335 }}
                     width={'100%'}
                     objectFit={'cover'}

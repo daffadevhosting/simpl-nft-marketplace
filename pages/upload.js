@@ -225,7 +225,7 @@ const Upload = () => {
     <form onSubmit={(e) => handleCreateListing(e)}>
       <div className={css.container}>
         <div className={css.collectionContainer}>
-    <Stack className={css.boxBorder} minH={'50vh'} h={{ base: '-webkit-fill-available', md: 435 }} direction={{ base: 'column', md: 'row' }} p={{ base: 2, md: 10 }} maxW={940} m={'auto'} w={'100%'}>
+    <Stack className={css.boxBorder} minH={'50vh'} h={{ base: '-webkit-fill-available', md: 435 }} direction={{ base: 'column', md: 'row' }} p={{ base: 2, md: 10 }} maxW={940} m={{ base: '10px', md: 'auto' }} w={{ base: 'auto', md: '100%' }}>
       <Flex flex={1}>
           {file ? (
             <Image
