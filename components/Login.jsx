@@ -83,7 +83,7 @@ export default function Login() {
       <Heading size='md' mb='4'>Connect your wallet</Heading>
 <SimpleGrid columns={2} spacingX='8px' spacingY='8px' h={{ base: '260px', sm: '100%'}}>
 <div>
-<Tooltip hasArrow className={css.pulse} label='Recomended' bg='green' color='white'>
+<Tooltip hasArrow className={css.pulse} label='Recomended' bg='green' color='white' placement='top'>
   <Box className={css.metamask} height='100px' onClick={ () => { connectWithMetamask();  onClose();}}
             _hover={{
               transform: 'translateY(-5px)',

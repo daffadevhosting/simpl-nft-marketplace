@@ -8,7 +8,8 @@ import {
   Text,
   Stack,
   Image,
-  Radio, RadioGroup
+  Radio,
+  RadioGroup
 } from '@chakra-ui/react'
 import {
   useContract,
