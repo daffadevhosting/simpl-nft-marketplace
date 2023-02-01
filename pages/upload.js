@@ -340,17 +340,9 @@ const Upload = () => {
       )}
 </Popover>
           ) : (
-          <div
-            textTransform={'uppercase'}
-            color={'white'}
-            fontWeight={600}
-            fontSize={'sm'}
-            bg={'red'}
-            p={2}
-            alignSelf={'center'}
-            rounded={'md'}>
+          <h2>
             Connect your wallet
-          </div>
+          </h2>
 		)}
         </Stack>
       </Flex>
