@@ -91,7 +91,7 @@ export default function Listings() {
                 >
       <Box
         role={'group'}
-        p={{ base: 2, md: 6 }}
+        p={{ base: 2, md: 0 }}
         maxW={'330px'}
         w={'full'}
         bg={colorBg}
@@ -129,7 +129,7 @@ export default function Listings() {
                     src={`${listing.asset.image}`}
                     rounded={'lg'}
                     height={{ base: 140, md: 335 }}
-                    width={282}
+                    width={'100%'}
                     objectFit={'cover'}
                     metadata={{ ...listing.asset }}
                     alt='NFT listing'
@@ -144,7 +144,7 @@ export default function Listings() {
             {listing.asset.name}
           </Heading>
           <Stack direction={'row'} align={'center'}>
-            <Text fontWeight={800} fontSize={'xl'}>
+            <Text fontWeight={800} fontSize={'xl'} pb={'10px'}>
               {listing.buyoutCurrencyValuePerToken.displayValue}{" "}
                     {listing.buyoutCurrencyValuePerToken.symbol}
             </Text>
