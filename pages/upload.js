@@ -332,7 +332,7 @@ const Upload = () => {
             <ButtonGroup size='sm'>
               <Button variant='outline'
                   onClick={onClose}>Noop</Button>
-              <Button type="submit" colorScheme='green' onClick={onClose}>Ok, Agree'</Button>
+              <Button type="submit" colorScheme='green' onClick={onClose}>Ok, Agree</Button>
             </ButtonGroup>
           </PopoverFooter>
   </PopoverContent>

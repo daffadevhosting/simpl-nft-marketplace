@@ -18,7 +18,8 @@ import {
   Heading,
   Text,
   useColorModeValue,
-  Container
+  Container,
+  useToast
 } from '@chakra-ui/react';
 import {
   ChainId,
@@ -39,39 +40,34 @@ const Logo = "/icons/opensea.svg"
 
 const Resell: NextPage = () => {
   const address = useAddress();
-  // Next JS Router hook to redirect to other pages
+  const alert = useToast();
+
   const router = useRouter();
   const networkMismatch = useNetworkMismatch();
   const [, switchNetwork] = useNetwork();
 
   const [creatingListing, setCreatingListing] = useState(false);
 
-  // Connect to our marketplace contract via the useContract hook
   const { contract: marketplace } = useContract(
-    MARKETPLACE_ADDRESS, // Your marketplace contract address here
+    MARKETPLACE_ADDRESS,
     "marketplace"
   );
 
-  // This function gets called when the form is submitted.
   async function handleCreateListing(e: any) {
+    setCreatingListing(true);
     try {
-      // Ensure user is on the correct network
       if (networkMismatch) {
         switchNetwork?.(activeChainId);
         return;
       }
 
-      // Prevent page from refreshing
       e.preventDefault();
 
-      // Store the result of either the direct listing creation or the auction listing creation
       let transactionResult: undefined | TransactionResult = undefined;
 
-      // De-construct data from form submission
       const { listingType, contractAddress, tokenId, price } =
         e.target.elements;
 
-      // Depending on the type of listing selected, call the appropriate function
       // For Direct Listings:
       if (listingType.value === "directListing") {
         transactionResult = await createDirectListing(
@@ -90,12 +86,26 @@ const Resell: NextPage = () => {
         );
       }
 
-      // If the transaction succeeds, take the user back to the homepage to view their listing!
       if (transactionResult) {
+              alert({
+                  title: 'Success.',
+                  description: "Listing NFT berhasil...",
+                  status: 'success',
+                  duration: 5000,
+                  isClosable: true,
+                });
         router.push(`/`);
       }
     } catch (error) {
-      console.error(error);
+      alert({
+          title: 'Listing Gagal.',
+          description: "Listing NFT gagal. Check the console for more details",
+          status: 'error',
+          duration: 7000,
+          isClosable: true,
+        });
+    } finally {
+      setCreatingListing(false);
     }
   }
 
@@ -106,14 +116,14 @@ const Resell: NextPage = () => {
   ) {
     try {
       const transaction = await marketplace?.auction.createListing({
-        assetContractAddress: contractAddress, // Contract Address of the NFT
-        buyoutPricePerToken: price, // Maximum price, the auction will end immediately if a user pays this price.
-        currencyContractAddress: NATIVE_TOKEN_ADDRESS, // NATIVE_TOKEN_ADDRESS is the crpyto curency that is native to the network. i.e. Goerli ETH.
-        listingDurationInSeconds: 60 * 60 * 24 * 7, // When the auction will be closed and no longer accept bids (1 Week)
-        quantity: 1, // How many of the NFTs are being listed (useful for ERC 1155 tokens)
-        reservePricePerToken: 0, // Minimum price, users cannot bid below this amount
-        startTimestamp: new Date(), // When the listing will start
-        tokenId: tokenId, // Token ID of the NFT.
+        assetContractAddress: contractAddress,
+        buyoutPricePerToken: price,
+        currencyContractAddress: NATIVE_TOKEN_ADDRESS,
+        listingDurationInSeconds: 60 * 60 * 24 * 7,
+        quantity: 1,
+        reservePricePerToken: 0,
+        startTimestamp: new Date(),
+        tokenId: tokenId,
       });
 
       return transaction;
@@ -129,13 +139,13 @@ const Resell: NextPage = () => {
   ) {
     try {
       const transaction = await marketplace?.direct.createListing({
-        assetContractAddress: contractAddress, // Contract Address of the NFT
-        buyoutPricePerToken: price, // Maximum price, the auction will end immediately if a user pays this price.
-        currencyContractAddress: NATIVE_TOKEN_ADDRESS, // NATIVE_TOKEN_ADDRESS is the crpyto curency that is native to the network. i.e. Goerli ETH.
-        listingDurationInSeconds: 60 * 60 * 24 * 7, // When the auction will be closed and no longer accept bids (1 Week)
-        quantity: 1, // How many of the NFTs are being listed (useful for ERC 1155 tokens)
-        startTimestamp: new Date(0), // When the listing will start
-        tokenId: tokenId, // Token ID of the NFT.
+        assetContractAddress: contractAddress,
+        buyoutPricePerToken: price,
+        currencyContractAddress: NATIVE_TOKEN_ADDRESS,
+        listingDurationInSeconds: 60 * 60 * 24 * 7,
+        quantity: 1,
+        startTimestamp: new Date(0),
+        tokenId: tokenId,
       });
 
       return transaction;
@@ -225,8 +235,7 @@ const Resell: NextPage = () => {
                 color={'white'}
                 _hover={{
                   bg: 'blue.500'
-                }}
-          >
+                }} isLoading={creatingListing} loadingText='Transaction' spinnerPlacement='start'>
 {networkMismatch ? (
 <>
 Switch Network
