@@ -13,6 +13,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import { MARKETPLACE_ADDRESS } from "../const/contractAddresses";
+import css from "../styles/css.module.scss";
 
 export default function Banner() {
   const { contract: marketplace } = useContract(MARKETPLACE_ADDRESS);
@@ -37,14 +38,14 @@ export default function Banner() {
         px={useBreakpointValue({ base: 4, md: 8 })}
         bgGradient={'linear(to-r, blackAlpha.600, transparent)'}>
         <Stack maxW={'2xl'} align={'center'} spacing={6}>
-          <Text
+          <Text className={css.slideInLeft}
             color={'white'}
             fontWeight={700}
             lineHeight={1.2}
             fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}>
               {contractMetadata?.name}
           </Text>
-              <Text color={'white'}>{contractMetadata?.description}</Text>
+              <Text color={'white'} className={css.slideInRight}>{contractMetadata?.description}</Text>
         </Stack>
       </VStack>
     </Flex>

@@ -40,6 +40,10 @@ body {
   box-sizing: border-box;
 }
 
+.hover-3d {
+    width: -webkit-fill-available;
+    }
+
 ::-webkit-scrollbar {
   width: 5px;
   border-radius: 8px;

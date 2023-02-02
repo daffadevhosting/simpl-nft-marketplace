@@ -11,7 +11,7 @@ export default function Warning() {
       <Hover
         perspective={800}
         max ={10}>
-        <Flex
+        <Flex className={css.flipInX}
           flexDirection="column"
           justifyContent="center"
           alignItems="center"

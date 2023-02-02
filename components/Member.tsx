@@ -132,7 +132,7 @@ const bgColor = useColorModeValue('white', 'gray.800');
     <Container maxW={'8xl'} py={{ base: 6, md: 12 }} mt={{ base: 6, md: 0 }}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} mt={'8'} maxW={1250}ml={'auto'} mr={'auto'}>
         <Flex justify={'center'} overflow={'hidden'} borderRadius={'6'}>
-          <Image
+          <Image className={css.bounceInRight}
             h={500}
             maxW={'auto'}
             rounded={'md'}
@@ -146,7 +146,7 @@ const bgColor = useColorModeValue('white', 'gray.800');
       <Hover
         perspective={500}
         max ={6}>
-          <Image
+          <Image className={css.bounceInLeft}
             h={500}
             w={'100%'}
             maxW={'500px'}
