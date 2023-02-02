@@ -315,7 +315,7 @@ const Upload = () => {
       {({ isOpen, onClose }) => (
         <>
   <PopoverTrigger>
-    <Button bg={'blue'} color={'white'} disabled={creatingListing} _hover={{
+    <Button bg={'blue'} color={'white'} isLoading={creatingListing} loadingText='Loading' spinnerPlacement='start' _hover={{
               transform: 'translateY(-2px)',
               boxShadow: 'lg',
               bg: 'blue.800',
@@ -331,8 +331,8 @@ const Upload = () => {
           <PopoverFooter display='flex' justifyContent='flex-end'>
             <ButtonGroup size='sm'>
               <Button variant='outline'
-                  onClick={onClose}>Cancel</Button>
-              <Button type="submit" colorScheme='green' onClick={onClose}>Apply</Button>
+                  onClick={onClose}>Noop</Button>
+              <Button type="submit" colorScheme='green' onClick={onClose}>Ok, Agree'</Button>
             </ButtonGroup>
           </PopoverFooter>
   </PopoverContent>
