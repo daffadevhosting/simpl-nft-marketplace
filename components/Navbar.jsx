@@ -20,6 +20,8 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
+  HStack,
+  VStack,
   useColorMode,
   Center,
   useToast 
@@ -30,9 +32,11 @@ import { useContext, useRef } from "react";
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { openseaUrl, walletscanUrl } from "../const/aLinks";
 import { RiLoginCircleFill, RiWallet3Fill, RiShieldUserFill, RiSignalWifiErrorLine } from "react-icons/ri";
+import { FiChevronDown, } from 'react-icons/fi';
+import SideMenu from './SideBar';
 import { useMagic } from "@thirdweb-dev/react/evm/connectors/magic";
 
-const Title = 'SimPL marketplace';
+const Title = 'SimPL';
 const openseaLink = openseaUrl;
 const scanUrl = walletscanUrl;
 const Logo = "/icons/opensea.svg";
@@ -74,9 +78,6 @@ export default function Navbar() {
   function marketClick() {
     router.push("/");
   }
-  function homeClick() {
-    router.push("/");
-  }
   function sellingClick() {
     router.push("/resell");
   }
@@ -88,10 +89,11 @@ export default function Navbar() {
     <>
       <Box bg={'#262936; backdrop-filter: blur(5px); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);'} px={4} style={{position: 'fixed', width: '100%', top: 0}}zIndex={1}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box onClick={homeClick} cursor={'pointer'} fontSize={'lg'} fontWeight={700} color={'white'}>{Title}</Box>
+<SideMenu />
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={3}>
+<div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 0' }}>
               <Button>
   <Link href={openseaLink()} target="_blank" rel="noopener noreferrer" title="OpenSea" style={{height: 20,}}>
 				<Image src={Logo} width={20} height={20} alt="logo" /></Link>
@@ -99,22 +101,35 @@ export default function Navbar() {
               <Button onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MoonIcon size={32} /> : <SunIcon size={32} />}
               </Button>
+</div>
 
               <Menu>
     <>
         {address ? (
 		<>
-                <MenuButton
-                  as={Button}
-                  rounded={'full'}
-                  variant={'link'}
-                  cursor={'pointer'}
-                  minW={0}
-                  color={'white'}>
-                  <RiShieldUserFill
-                    size={40}
-                  />
-                </MenuButton>
+            <MenuButton
+              py={2}
+              transition="all 0.3s"
+              _focus={{ boxShadow: 'none' }}>
+              <HStack>
+                <Avatar
+                  size={'sm'}
+                  src={
+                    'https://e7.pngegg.com/pngimages/798/436/png-clipart-computer-icons-user-profile-avatar-profile-heroes-black-thumbnail.png'
+                  }
+                />
+                <VStack
+                  display={{ base: 'none', md: 'flex' }}
+                  alignItems="flex-start"
+                  spacing="1px"
+                  ml="2">
+                  <span style={{color: 'white'}}>{address.slice(0, 3).concat("").concat(address.slice(-4))}</span>
+                </VStack>
+                <Box display={{ base: 'none', md: 'flex' }}>
+                  <FiChevronDown color={'white'} />
+                </Box>
+              </HStack>
+            </MenuButton>
                 <MenuList alignItems={'center'}>
                   <br />
                   <Center>

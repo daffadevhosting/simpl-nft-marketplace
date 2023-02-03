@@ -232,7 +232,7 @@ export const discordUrl = () => {
   return `${process.env.NEXT_PUBLIC_DISCORD_URL}`
 }
 
-export const snsLinks = {
+export const aLinks = {
   explorerUrl,
   tokenExplorer,
   openseaUrl,

@@ -36,6 +36,29 @@
     cursor: pointer;
 }
 
+.linkButton {
+    padding: 6px;
+    border-radius: 6px;
+    text-decoration: none !important;
+}
+
+.linkButton:active {
+  background-color: green;
+}
+
+.linkButton:focus {
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.52);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+}
+
+.linkButton:hover {
+  background-color: rgb(66 153 225 / 60%);
+  box-shadow: 0px 2px 3px rgb(0 0 0 / 7%), 0px 6px 6px rgb(0 0 0 / 4%), 0px 12px 12px rgb(0 0 0 / 3%), 0px 20px 24px rgb(0 0 0 / 3%), 0px 32px 40px rgb(0 0 0 / 2%), 0px 80px 100px rgb(0 0 0 / 16%), 0px 0px 4px rgb(0 0 0 / 8%), 0px 8px 48px rgb(0 0 0 / 8%);
+}
+
 .none {
     display: none !important;
 }

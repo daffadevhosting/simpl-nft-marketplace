@@ -40,9 +40,18 @@ body {
   box-sizing: border-box;
 }
 
+.active {
+    background-color: green;
+    padding: 6px;
+    border-radius: 6px;
+    text-decoration: none !important;
+    box-shadow: 0px 2px 3px rgb(0 0 0 / 7%), 0px 6px 6px rgb(0 0 0 / 4%), 0px 12px 12px rgb(0 0 0 / 3%), 0px 20px 24px rgb(0 0 0 / 3%), 0px 32px 40px rgb(0 0 0 / 2%), 0px 80px 100px rgb(0 0 0 / 16%), 0px 0px 4px rgb(0 0 0 / 8%), 0px 8px 48px rgb(0 0 0 / 8%);
+
+}
+
 .hover-3d {
     width: -webkit-fill-available;
-    }
+}
 
 ::-webkit-scrollbar {
   width: 5px;
