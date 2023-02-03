@@ -4,6 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import Head from 'next/head';
 import Script from 'next/script';
 import Header from "../components/Navbar";
+import ScrollToTop from '../components/ScrollToTop';
 import "../styles/globals.css";
 
 const activeChainId =  parseInt(`${process.env.NEXT_PUBLIC_CHAIN_ID}`);
@@ -33,6 +34,7 @@ function MyApp({ Component, pageProps }) {
 <meta property="og:image" content="/icons/fav/apple-touch-icon.png" />
       </Head>
       <Header />
+			<ScrollToTop />
       <Component {...pageProps} />
     </ChakraProvider>
     </ThirdwebProvider>

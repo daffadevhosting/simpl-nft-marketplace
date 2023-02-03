@@ -15,16 +15,17 @@ import {
   VisuallyHidden,
 } from '@chakra-ui/react'
 import { FiMenu, } from 'react-icons/fi';
-import { RiUpload2Fill, RiHandCoinLine, RiRefundFill, RiHome2Line } from 'react-icons/ri';
+import { RiUpload2Fill, RiHandCoinLine, RiRefundFill, RiHome2Line, RiDropLine } from 'react-icons/ri';
 import Image from 'next/image';
 import { useRouter } from "next/router";
-import { stakeUrl, uploadUrl, resellUrl, marketUrl } from "../const/navLink";
+import { stakeUrl, uploadUrl, resellUrl, marketUrl, dropUrl } from "../const/navLink";
 import css from "../styles/css.module.scss";
 
 const home = marketUrl;
 const stake = stakeUrl;
 const upload = uploadUrl;
 const resell = resellUrl;
+const nftdrop = dropUrl;
 
 const Title = 'SimPL NFT';
 
@@ -96,22 +97,28 @@ export default function SideBar() {
             <RiHome2Line />
 </Flex>
           </Link>
-          <Link className={`${css.linkButton} ${router.pathname == "/staking" ? "active" : ""}`} label={'Twitter'} href={stake()}>
+          <Link className={`${css.linkButton} ${router.pathname == "/staking" ? "active" : ""}`} label={'Stake'} href={stake()}>
 <Flex alignItems={'center'} justifyContent={'space-between'}>
 <Text> Stake NFTs </Text>
             <RiHandCoinLine />
 </Flex>
           </Link>
-          <Link className={`${css.linkButton} ${router.pathname == "/upload" ? "active" : ""}`} label={'Instagram'} href={upload()}>
+          <Link className={`${css.linkButton} ${router.pathname == "/upload" ? "active" : ""}`} label={'Upload NFT'} href={upload()}>
 <Flex alignItems={'center'} justifyContent={'space-between'}>
 <Text> Upload NFTs </Text>
             <RiUpload2Fill />
 </Flex>
           </Link>
-          <Link className={`${css.linkButton} ${router.pathname == "/resell" ? "active" : ""}`} label={'Github'} href={resell()}>
+          <Link className={`${css.linkButton} ${router.pathname == "/resell" ? "active" : ""}`} label={'Resell'} href={resell()}>
 <Flex alignItems={'center'} justifyContent={'space-between'}>
 <Text> Resell NFTs </Text>
             <RiRefundFill />
+</Flex>
+          </Link>
+          <Link className={`${css.linkButton} ${router.pathname == "/nftdrop" ? "active" : ""}`} label={'Air Drop'} href={nftdrop()}>
+<Flex alignItems={'center'} justifyContent={'space-between'}>
+<Text> AirDrop NFT </Text>
+            <RiDropLine />
 </Flex>
           </Link>
         </Stack>

@@ -14,9 +14,14 @@ export const marketUrl = () => {
   return `/resell`
 }
 
+export const dropUrl = () => {
+  return `/nftdrop`
+}
+
 export const navLinks = {
 stakeUrl,
 uploadUrl,
 resellUrl,
-marketUrl
+marketUrl,
+dropUrl
 }
