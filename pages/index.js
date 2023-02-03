@@ -80,7 +80,7 @@ export default function Listings() {
         </div>
 
         {!isLoading ? (
-<div className={ `${css.glassBackground} ${css.boxShadow}`}>
+<div className={ `${css.glassBackground} ${css.boxShadow} ${css.slideInUp}`}>
           <div className={ `${css.nftBoxGrid}` }>
             {listings
               ?.filter((listing) => listing.type === filter)

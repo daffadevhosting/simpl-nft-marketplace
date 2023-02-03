@@ -41,7 +41,7 @@ body {
 }
 
 .active {
-    background-color: green;
+    background: rgba(255, 255, 255, 0.52);
     padding: 6px;
     border-radius: 6px;
     text-decoration: none !important;
