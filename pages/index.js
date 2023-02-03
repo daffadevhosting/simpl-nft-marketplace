@@ -134,7 +134,7 @@ export default function Listings() {
                     src={`${listing.asset.image}`}
                     rounded={'lg'}
                     mb={{ base: 0, md: 10 }}
-                    height={{ base: 140, md: 335 }}
+                    height={{ base: 140, md: 356 }}
                     width={'100%'}
                     objectFit={'cover'}
                     metadata={{ ...listing.asset }}
@@ -143,15 +143,15 @@ export default function Listings() {
                   />
       </Hover>
         </Box>
-        <Stack pt={{ base: 6, md: 10 }} align={'center'}>
+        <Stack pt={{ base: 6, md: 10 }} align={'center'} pos={'relative'} top={'-10px'} zIndex={-1}>
           <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
-            
+            Owner <b>{listing.sellerAddress?.slice(0, 6)}</b>
           </Text>
           <Heading fontSize={'1xl'} fontFamily={'body'} fontWeight={500}>
             {listing.asset.name}
           </Heading>
           <Stack direction={'row'} align={'center'}>
-            <Text fontWeight={800} fontSize={'xl'} pb={'10px'}>
+            <Text fontWeight={800} fontSize={'xl'}>
               {listing.buyoutCurrencyValuePerToken.displayValue}{" "}
                     {listing.buyoutCurrencyValuePerToken.symbol}
             </Text>
