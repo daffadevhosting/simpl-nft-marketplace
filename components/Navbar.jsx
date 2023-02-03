@@ -72,10 +72,10 @@ export default function Navbar() {
   const connectWithCoinbaseWallet = useCoinbaseWallet();
   const disconnectWallet = useDisconnect();
 
-  function handleClick() {
+  function uploadClick() {
     router.push("/upload");
   }
-  function marketClick() {
+  function homeClick() {
     router.push("/");
   }
   function sellingClick() {
@@ -154,9 +154,9 @@ export default function Navbar() {
 </>
 ) : (
 <>
-                  <MenuItem onClick={marketClick}>Marketplace</MenuItem>
+                  <MenuItem onClick={homeClick}>Marketplace</MenuItem>
                   <MenuItem onClick={stakeClick}>Stake NFT</MenuItem>
-                  <MenuItem onClick={handleClick}>Upload NFT</MenuItem>
+                  <MenuItem onClick={uploadClick}>Upload NFT</MenuItem>
                   <MenuItem onClick={sellingClick}>Resell NFT</MenuItem>
                   <MenuItem onClick={() => {disconnectWallet(), homeClick(), toast({
           title: 'Wallet Disconnect.',
