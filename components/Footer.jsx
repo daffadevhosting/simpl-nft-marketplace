@@ -43,7 +43,7 @@ const SocialButton = ({
 
 export default function Footer() {
   return (
-    <Box style={{position: 'relative', bottom: 0, width: '100%', marginTop: 0}}
+    <Box style={{position: 'relative', bottom: 0, width: '100%', marginTop: 46}}
       bg={useColorModeValue('gray.50', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}>
       <Container

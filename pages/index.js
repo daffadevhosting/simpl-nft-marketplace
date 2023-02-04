@@ -23,6 +23,7 @@ import css from "../styles/css.module.scss";
 import LoginModal from "../components/Login"
 import Banner from "../components/Banner";
 import Loading from "../components/Spinner";
+import FootSection from "../components/HowTo";
 import Footer from "../components/Footer";
 
 export default function Listings() {
@@ -80,6 +81,7 @@ export default function Listings() {
         </div>
 
         {!isLoading ? (
+<>
 <div className={ `${css.glassBackground} ${css.boxShadow} ${css.slideInUp}`}>
           <div className={ `${css.nftBoxGrid}` }>
             {listings
@@ -162,6 +164,8 @@ export default function Listings() {
               ))}
           </div>
 </div>
+<FootSection />
+</>
         ) : (
         <>
           <div className={css.loadingOrError}><Loading /></div>

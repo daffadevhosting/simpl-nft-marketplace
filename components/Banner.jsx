@@ -32,7 +32,7 @@ export default function Banner() {
       backgroundSize={'cover'}
       backgroundPosition={'center center'}
       top={'64px'}>
-      <VStack
+      <VStack style={{ boxShadow: '0px 5px 20px -4px #0000008c' }}
         w={'full'}
         justify={'center'}
         px={useBreakpointValue({ base: 4, md: 8 })}
