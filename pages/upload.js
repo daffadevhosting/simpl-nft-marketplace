@@ -254,7 +254,7 @@ const Upload = () => {
           )}
       </Flex>
       <Flex p={4} flex={1} align={'center'} justify={'center'}>
-        <Stack spacing={4} w={'full'} maxW={'md'}>
+        <Stack spacing={4} w={'full'} maxW={'md'} h={{ base: '-webkit-fill-available', md: 380 }}>
           <h1 className={css.ourCollection}>
             Upload your NFT
           </h1>
@@ -315,7 +315,7 @@ const Upload = () => {
       {({ isOpen, onClose }) => (
         <>
   <PopoverTrigger>
-    <Button bg={'blue'} color={'white'} isLoading={creatingListing} loadingText='Loading' spinnerPlacement='start' _hover={{
+    <Button bg={'blue'} color={'white'} mt={{ base: '16px', md: '28px' }} isLoading={creatingListing} loadingText='Loading' spinnerPlacement='start' _hover={{
               transform: 'translateY(-2px)',
               boxShadow: 'lg',
               bg: 'blue.800',

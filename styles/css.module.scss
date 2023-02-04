@@ -42,11 +42,29 @@ margin-top: 0;
   background-color: transparent;
   border: 1px solid grey;
   border-radius: 8px;
-  height: 48px;
+  height: 40px;
   padding: 0 16px;
   font-size: 1rem;
-  margin-top: 16px;
+  margin-top: 28px !important;
   width: 100%;
+@include mobile {
+margin-top: 16px !important;
+    }
+}
+
+.textInputresell {
+  width: 75%;
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 8px;
+  height: 40px;
+  padding: 0 16px;
+  font-size: 1rem;
+  margin-top: 0px !important;
+  width: 100%;
+@include mobile {
+margin-top: 16px !important;
+    }
 }
 
 .imageInput {

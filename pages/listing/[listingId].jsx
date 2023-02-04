@@ -91,23 +91,21 @@ export default function ListingPage() {
 
   async function createBidOrOffer() {
     try {
-      // Ensure user is on the correct network
+
       if (networkMismatch) {
         switchNetwork &&  switchNetwork(Number(process.env.NEXT_PUBLIC_CHAIN_ID));
         return;
       }
 
-      // If the listing type is a direct listing, then we can create an offer.
       if (listing?.type === ListingType.Direct) {
         await marketplace?.direct.makeOffer(
-          listingId, // The listingId of the listing we want to make an offer for
-          1, // Quantity = 1
-          NATIVE_TOKENS[activeChainId].wrapped.address, // Wrapped Ether address on Goerli
-          bidAmount // The offer amount the user entered
+          listingId,
+          1,
+          NATIVE_TOKENS[activeChainId].wrapped.address,
+          bidAmount
         );
       }
 
-      // If the listing type is an auction listing, then we can create a bid.
       if (listing?.type === ListingType.Auction) {
         await marketplace?.auction.makeBid(listingId, bidAmount);
       }
@@ -131,13 +129,11 @@ export default function ListingPage() {
 
   async function buyNft() {
     try {
-      // Ensure user is on the correct network
       if (networkMismatch) {
         switchNetwork && switchNetwork(Number(process.env.NEXT_PUBLIC_CHAIN_ID));
         return;
       }
 
-      // Simple one-liner for buying the NFT
       await marketplace?.buyoutListing(listingId, 1);
       alert({
           title: 'Berhasil.',
@@ -217,7 +213,9 @@ export default function ListingPage() {
 	   <div>
         <Text fontSize={'sm'}>
 		  <b>Contract:</b>{" "}
-          <Button onClick={copyToClipboard} variant={'link'} colorScheme={'blue'} title={'Salin'}> {contracAddress.slice(0, 4).concat("...").concat(contracAddress.slice(-4))}</Button> 
+<Tooltip hasArrow className={css.pulse} label='Click to copy' bg='blue.800' color='white' placement='top'>
+          <Button onClick={copyToClipboard} variant={'link'} colorScheme={'blue'} title={'Salin'}> {contracAddress.slice(0, 4).concat("...").concat(contracAddress.slice(-4))}</Button>
+</Tooltip> 
 		</Text>
           {copySuccess}
         </div>
@@ -243,7 +241,7 @@ export default function ListingPage() {
               Buy
             </Button>
         ) : (<>
-<Tooltip className={css.pulse} label='Your wallet not connected' bg='red' color='white'>
+<Tooltip label='Your wallet not connected' bg='red' color='white'>
             <Button w={200} bg={'grey'} color={'white'} alignSelf={'flex-end'} fontWeight={600} p={2} rounded={'md'} isDisabled>
               Buy
             </Button>

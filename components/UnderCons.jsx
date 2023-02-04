@@ -11,7 +11,7 @@ export default function UnderCons() {
         This page is on development
       </Heading>
       <Text color={'gray.500'}>
-       Please Comeback Later.
+       Please Check Back Later.
       </Text>
       </Box>
     </Box>

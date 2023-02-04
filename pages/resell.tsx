@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   useContract,
   useNetwork,
@@ -19,7 +19,17 @@ import {
   Text,
   useColorModeValue,
   Container,
-  useToast
+  useToast,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+  ButtonGroup
 } from '@chakra-ui/react';
 import {
   ChainId,
@@ -32,6 +42,7 @@ import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { openseaUrl } from "../const/aLinks";
 import Footer from "../components/Footer";
+import LoginModal from "../components/Login";
 import css from "../styles/css.module.scss";
 
 const activeChainId = parseInt(`${process.env.NEXT_PUBLIC_CHAIN_ID}`)
@@ -41,6 +52,7 @@ const Logo = "/icons/opensea.svg"
 const Resell: NextPage = () => {
   const address = useAddress();
   const alert = useToast();
+  const initRef = React.useRef();
 
   const router = useRouter();
   const networkMismatch = useNetworkMismatch();
@@ -178,7 +190,7 @@ const Resell: NextPage = () => {
             <FormControl id="contractAddress" isRequired>
               <FormLabel>NFT Contract</FormLabel>
               <input
-            className={css.textInput}
+            className={css.textInputresell}
             type="text"
             name="contractAddress"
             placeholder="NFT Contract Address" />
@@ -186,7 +198,7 @@ const Resell: NextPage = () => {
             <FormControl id="tokenId" isRequired>
               <FormLabel>NFT Token ID</FormLabel>
               <input
-            className={css.textInput}
+            className={css.textInputresell}
             type="text"
             name="tokenId"
             placeholder="NFT Token ID" />
@@ -194,7 +206,7 @@ const Resell: NextPage = () => {
             <FormControl id="price" isRequired>
               <FormLabel>Sale Price</FormLabel>
           <input
-            className={css.textInput}
+            className={css.textInputresell}
             type="text"
             name="price"
             placeholder="Sale Price in BNB"
@@ -228,30 +240,41 @@ const Resell: NextPage = () => {
 		  
             <Stack spacing={10}>
         {address ? (
+<Popover isLazy closeOnBlur={false} placement='top-start' initialFocusRef={initRef}>
+      {({ isOpen, onClose }) => (
+        <>
+  <PopoverTrigger>
           <Button 
 				style={{marginTop: '10px'}}
-				type="submit"
                 bg={'blue.400'}
                 color={'white'}
                 _hover={{
                   bg: 'blue.500'
-                }} isLoading={creatingListing} loadingText='Transaction' spinnerPlacement='start'>
-{networkMismatch ? (
-<>
-Switch Network
-</>
-) : (
-<>
-           List NFT
-			</>
-)}
+                }} isLoading={creatingListing} loadingText='Transaction' spinnerPlacement='start'> List NFT
           </Button >
+  </PopoverTrigger>
+  <PopoverContent>
+    <PopoverHeader fontWeight='semibold'>Confirmation</PopoverHeader>
+    <PopoverArrow />
+    <PopoverCloseButton />
+    <PopoverBody>
+      There will be at least 2 transactions for listing NFT, do you agree?
+    </PopoverBody>
+          <PopoverFooter display='flex' justifyContent='flex-end'>
+            <ButtonGroup size='sm'>
+              <Button variant='outline'
+                  onClick={onClose}>Noop</Button>
+              <Button type="submit" colorScheme='green' onClick={onClose}>Ok, Fine</Button>
+            </ButtonGroup>
+          </PopoverFooter>
+  </PopoverContent>
+        </>
+      )}
+</Popover>
           ) : (
-          <Button
-			colorScheme={'red'}
-            style={{ marginTop: 3, borderStyle: "none" }}
-			disabled> Connect Wallet
-          </Button >
+          <span
+            style={{ marginTop: 3, borderStyle: "none" }}> Wallet not connect
+          </span >
 		)}
             </Stack>
           </Stack>
@@ -259,7 +282,7 @@ Switch Network
       </Stack>
     </Flex>
     </form>
-      <Footer />
+      <LoginModal />
 </>
   );
 };
