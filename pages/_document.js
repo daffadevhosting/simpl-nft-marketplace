@@ -10,6 +10,7 @@ export default class Document extends NextDocument {
       <Html lang='id'>
     <Head>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
           <style>{`
             #__next {
               margin: 0 auto;
