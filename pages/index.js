@@ -44,9 +44,7 @@ export default function Listings() {
         <div className={css.bannerContainer}>
           {!loadingMetadata ? (
             <>
-            <div data-aos="fade-in">
                 <Banner />
-            </div>
             </>
           ) : (
             <>
