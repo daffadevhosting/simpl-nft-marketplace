@@ -1,7 +1,7 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import { RiIndeterminateCircleFill } from 'react-icons/ri';
 import Hover from "react-3d-hover";
-import css from "../styles/css.module.scss";
+import css from "../styles/css.module.css";
 
 export default function Warning() {
   return (

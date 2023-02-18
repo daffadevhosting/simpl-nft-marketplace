@@ -20,7 +20,7 @@ import {
 } from '@chakra-ui/react'
 import Link from "next/link";
 import React from "react";
-import css from "../styles/css.module.scss";
+import css from "../styles/css.module.css";
 import { RiSignalWifiErrorLine } from "react-icons/ri";
 import { ChainName } from "../const/aLinks";
 

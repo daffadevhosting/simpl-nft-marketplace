@@ -19,7 +19,7 @@ import { RiUpload2Fill, RiHandCoinLine, RiRefundFill, RiHome2Line, RiDropLine } 
 import Image from 'next/image';
 import { useRouter } from "next/router";
 import { stakeUrl, uploadUrl, resellUrl, marketUrl, dropUrl } from "../const/navLink";
-import css from "../styles/css.module.scss";
+import css from "../styles/css.module.css";
 
 const home = marketUrl;
 const stake = stakeUrl;
@@ -68,6 +68,7 @@ export default function SideBar() {
   return (
     <>
         <Flex h={16} alignItems={'center'} gap={3} justifyContent={'space-between'}>
+<div className={css.mobile_only}>
       <IconButton
         ref={btnRef}
         variant="outline"
@@ -75,6 +76,7 @@ export default function SideBar() {
         aria-label="open menu"
         icon={<FiMenu color={'white'} />}
       />
+</div>
           <Box onClick={homeClick} cursor={'pointer'} fontSize={'lg'} fontWeight={700} color={'white'}>{Title}</Box>
 </Flex>
       <Drawer

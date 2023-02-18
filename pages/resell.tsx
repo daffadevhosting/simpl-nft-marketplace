@@ -43,7 +43,7 @@ import { useRouter } from "next/router";
 import { openseaUrl } from "../const/aLinks";
 import Footer from "../components/Footer";
 import LoginModal from "../components/Login";
-import css from "../styles/css.module.scss";
+import css from "../styles/css.module.css";
 
 const activeChainId = parseInt(`${process.env.NEXT_PUBLIC_CHAIN_ID}`)
 const openseaLink = openseaUrl;

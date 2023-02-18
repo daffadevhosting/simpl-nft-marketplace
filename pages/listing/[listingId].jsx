@@ -32,7 +32,7 @@ import {
 import Hover from "react-3d-hover";
 import LoginModal from "../../components/Login";
 import Loading from "../../components/Spinner";
-import css from "../../styles/css.module.scss";
+import css from "../../styles/css.module.css";
 import React, { ReactElement, useContext, useState, useRef } from "react";
 import { useRouter } from "next/router";
 import { ChainName } from '../../const/aLinks';
@@ -160,8 +160,8 @@ export default function ListingPage() {
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Flex maxH={{ base: 361, md: 476 }} h={'100%'}>
       <Hover
-        perspective={800}
-        max ={8}>
+        perspective={1100}
+        max ={11}>
           <MediaRenderer
             className={css.objectCover}
             src={listing.asset.image}

@@ -36,7 +36,7 @@ import React, { useContext, useState, ReactElement } from 'react';
 import { MEMBERPASS_CONTRACT_ADDRESS, MEMBER_CARD_PRICE } from "../const/contractAddresses";
 import { ChainName, memberUrl } from "../const/aLinks";
 import Footer from "../components/Footer";
-import css from "../styles/css.module.scss";
+import css from "../styles/css.module.css";
 
   const IMAGE = './simpl.png';
   const Logo = "/icons/opensea.svg"

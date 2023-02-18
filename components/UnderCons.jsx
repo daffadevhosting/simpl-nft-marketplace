@@ -1,6 +1,6 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
 import { WarningTwoIcon } from '@chakra-ui/icons';
-import css from "../styles/css.module.scss";
+import css from "../styles/css.module.css";
 
 export default function UnderCons() {
   return (

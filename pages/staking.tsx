@@ -50,7 +50,7 @@ import MintMember from "../components/Member";
 import LoginModal from "../components/Login";
 import Footer from "../components/Footer";
 import WarnPage from "../components/Warning";
-import css from "../styles/css.module.scss";
+import css from "../styles/css.module.css";
 
 const nftCollection = NFT_COLLECTION_ADDRESS;
 const tokenContractAddress = TOKEN_REWARD_ADDRESS;

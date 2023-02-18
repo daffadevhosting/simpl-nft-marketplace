@@ -19,7 +19,7 @@ import {
 } from "@thirdweb-dev/react";
 import Hover from "react-3d-hover";
 import { MARKETPLACE_ADDRESS } from "../const/contractAddresses";
-import css from "../styles/css.module.scss";
+import css from "../styles/css.module.css";
 import LoginModal from "../components/Login"
 import Banner from "../components/Banner";
 import Loading from "../components/Spinner";
@@ -102,10 +102,7 @@ export default function Listings() {
         rounded={'lg'}
         pos={'relative'}
         zIndex={0}
-                    _hover={{
-                      transform: 'matrix(0.99, 0.12, -0.12, 0.99, 0, 0)',
-                      boxShadow: 'lg',
-                    }}>
+        className={css.box}>
         <Box
           rounded={'lg'}
           mt={{ base: '0', md: '-12'}}
@@ -129,8 +126,8 @@ export default function Listings() {
             },
           }}>
       <Hover
-        perspective={800}
-        max ={8}>
+        perspective={1100}
+        max ={11}>
                   <Image
                     id="tilt"
                     src={`${listing.asset.image}`}

@@ -13,7 +13,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import { MARKETPLACE_ADDRESS } from "../const/contractAddresses";
-import css from "../styles/css.module.scss";
+import css from "../styles/css.module.css";
 
 export default function Banner() {
   const { contract: marketplace } = useContract(MARKETPLACE_ADDRESS);

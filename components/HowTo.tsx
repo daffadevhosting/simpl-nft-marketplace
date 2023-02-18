@@ -9,8 +9,8 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import React, { ReactElement } from 'react';
-import { RiWallet3Line, RiUpload2Line, RiRefundFill } from "react-icons/ri";
-import css from "../styles/css.module.scss";
+import { RiHandCoinLine, RiUpload2Line, RiRefundFill } from "react-icons/ri";
+import css from "../styles/css.module.css";
 
 interface StatsCardProps {
   title: string;
@@ -50,7 +50,7 @@ export default function HowTo() {
         What can you do on website?
       </chakra.h1>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }} mt={{ base: 0, md: 65 }}>
-        <StatsCard icon={<RiWallet3Line size={56}/>} title={'Connect Wallet'} stat={'Connect your wallet for interact with website to try all feature'} />
+        <StatsCard icon={<RiHandCoinLine size={56}/>} title={'Stake NFT'} stat={'Stake your NFT at tBNB testnet and earn reward token from it.'} />
         <StatsCard icon={<RiUpload2Line size={56}/>} title={'Upload NFT'} stat={'Upload your NFTs and set a title, description and price.'} />
         <StatsCard icon={<RiRefundFill size={56}/>} title={'List for sale'} stat={'Earn tBNB for all your NFTs that you sell on our marketplace.'} />
       </SimpleGrid>

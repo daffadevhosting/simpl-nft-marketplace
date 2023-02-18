@@ -28,7 +28,7 @@ import {
 import { useRouter } from "next/router";
 import LoginModal from "../components/Login";
 import Footer from "../components/Footer";
-import css from "../styles/css.module.scss";
+import css from "../styles/css.module.css";
 
 const activeChainId =  parseInt(`${process.env.NEXT_PUBLIC_CHAIN_ID}`);
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { RiArrowUpSLine } from 'react-icons/ri';
-import css from "../styles/css.module.scss";
+import css from "../styles/css.module.css";
 
 const ScrollToTop = () => {
 	const [showTopBtn, setShowTopBtn] = useState(false);

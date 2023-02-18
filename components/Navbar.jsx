@@ -24,17 +24,19 @@ import {
   VStack,
   useColorMode,
   Center,
-  useToast 
+  useToast,
+  Tooltip,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import { useRouter } from "next/router";
-import { useContext, useRef } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { openseaUrl, walletscanUrl } from "../const/aLinks";
-import { RiLoginCircleFill, RiWallet3Fill, RiShieldUserFill, RiSignalWifiErrorLine } from "react-icons/ri";
+import { RiLoginCircleFill, RiWallet3Fill, RiShieldUserFill, RiSignalWifiErrorLine, RiUpload2Fill, RiHandCoinLine, RiRefundFill, RiHome2Line, RiDropLine } from "react-icons/ri";
 import { FiChevronDown, } from 'react-icons/fi';
 import SideMenu from './SideBar';
-import { useMagic } from "@thirdweb-dev/react/evm/connectors/magic";
+import { stakeUrl, uploadUrl, resellUrl, marketUrl, dropUrl } from "../const/navLink";
+import css from "../styles/css.module.css";
 
 const Title = 'SimPL';
 const openseaLink = openseaUrl;
@@ -59,8 +61,8 @@ const NavLink = ({ children }, { children: ReactNode }) => (
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const router = useRouter();
   const toast = useToast();
+  const router = useRouter();
   const address = useAddress();
   const networkMismatch = useNetworkMismatch();
   const [, switchNetwork] = useNetwork();
@@ -72,18 +74,11 @@ export default function Navbar() {
   const connectWithCoinbaseWallet = useCoinbaseWallet();
   const disconnectWallet = useDisconnect();
 
-  function uploadClick() {
-    router.push("/upload");
-  }
-  function homeClick() {
-    router.push("/");
-  }
-  function sellingClick() {
-    router.push("/resell");
-  }
-  function stakeClick() {
-    router.push("/staking");
-  }
+const home = marketUrl;
+const stake = stakeUrl;
+const upload = uploadUrl;
+const resell = resellUrl;
+const nftdrop = dropUrl;
   
   return (
     <>
@@ -93,11 +88,47 @@ export default function Navbar() {
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={3}>
-<div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 0' }}>
-              <Button>
-  <Link href={openseaLink()} target="_blank" rel="noopener noreferrer" title="OpenSea" style={{height: 20,}}>
-				<Image src={Logo} width={20} height={20} alt="logo" /></Link>
-              </Button>
+<div className={css.desktop_only} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 0' }}>
+<Tooltip hasArrow className={css.pulse} label='Home' bg='blue.600' color='white' placement='bottom'>
+<Link className={`${router.pathname == "/" ? "active" : ""}`} label={'Home'} href={'/'}>
+<Button>
+    <RiHome2Line size='20' />
+</Button>
+</Link>
+</Tooltip>
+<Tooltip hasArrow className={css.pulse} label='Stake NFT' bg='blue.600' color='white' placement='bottom'>
+<Link className={`${router.pathname == "/staking" ? "active" : ""}`} label={'Stake'} href={stake()}>
+<Button>
+    <RiHandCoinLine size='20' />
+</Button>
+</Link>
+</Tooltip>
+<Tooltip hasArrow className={css.pulse} label='Upload NFT' bg='blue.600' color='white' placement='bottom'>
+<Link className={`${router.pathname == "/upload" ? "active" : ""}`} label={'Upload NFT'} href={upload()}>
+<Button>
+    <RiUpload2Fill size='20' />
+</Button>
+</Link>
+</Tooltip>
+<Tooltip hasArrow className={css.pulse} label='Resell NFT' bg='blue.600' color='white' placement='bottom'>
+<Link className={`${router.pathname == "/resell" ? "active" : ""}`} label={'Resell'} href={resell()}>
+<Button>
+    <RiRefundFill size='20' />
+</Button>
+</Link>
+</Tooltip>
+<Tooltip hasArrow className={css.pulse} label='NFT Airdrop' bg='blue.600' color='white' placement='bottom'>
+<Link className={`${router.pathname == "/nftdrop" ? "active" : ""}`} label={'Air Drop'} href={nftdrop()}>
+<Button>
+    <RiDropLine size='20' />
+</Button>
+</Link>
+</Tooltip>
+</div>
+<div style={{ display: 'flex', alignItems: 'center', gap: 13, padding: '10px 0' }}>
+  <Link href={openseaLink()} target="_blank" rel="noopener noreferrer" title="OpenSea" style={{height: 30,}}>
+				<Image src={Logo} width={30} height={30} alt="logo" />
+ </Link>
               <Button onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MoonIcon size={32} /> : <SunIcon size={32} />}
               </Button>
