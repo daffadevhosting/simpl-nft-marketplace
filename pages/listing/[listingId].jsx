@@ -162,10 +162,10 @@ export default function ListingPage() {
         <Flex maxH={{ base: 361, md: 476 }} h={'100%'}>
       <Hover
         perspective={1100}
-        max ={11}>
+        max ={35}>
           <MediaRenderer
-            data-tilt data-tilt-max="11"
-            data-tilt-speed="100"
+            data-tilt data-tilt-max="35"
+            data-tilt-speed="1000"
             data-tilt-glare="true"
             data-tilt-gyroscope="true"
             className={css.objectCover}
@@ -258,7 +258,6 @@ export default function ListingPage() {
     </Container>
 <LoginModal />
       <Footer />
-      <Script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js" integrity="sha512-RX/OFugt/bkgwRQg4B22KYE79dQhwaPp2IZaA/YyU3GMo/qY7GrXkiG6Dvvwnds6/DefCfwPTgCXnaC6nAgVYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></Script>
 </>
   );
 }

@@ -8,18 +8,22 @@ export default function Warning() {
     <Box textAlign="center" py={20} px={10} h={'100vh'}>
 <div className={css.loading}>
       <Box display="inline-block">
-      <Hover
-        perspective={800}
-        max ={10}>
-        <Flex className={css.slideInUp}
-          flexDirection="column"
-          justifyContent="center"
-          alignItems="center"
-          bg={'white'}
-          rounded={'50%'}
-          w={'200px'}
-          h={'200px'}
-          textAlign="center">
+          <Hover
+            perspective={1100}
+            max ={35}
+            data-tilt data-tilt-max="35"
+            data-tilt-speed="1000"
+            data-tilt-glare="true"
+            data-tilt-gyroscope="true">
+            <Flex className={css.slideInUp}
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              bg={'white'}
+              rounded={'50%'}
+              w={'200px'}
+              h={'200px'}
+              textAlign="center">
           <RiIndeterminateCircleFill size={'200px'} color={'red'} />
         </Flex>
       </Hover>

@@ -79,6 +79,10 @@ const stake = stakeUrl;
 const upload = uploadUrl;
 const resell = resellUrl;
 const nftdrop = dropUrl;
+
+  function homeClick() {
+    router.push("/");
+  }
   
   return (
     <>
@@ -185,10 +189,6 @@ const nftdrop = dropUrl;
 </>
 ) : (
 <>
-                  <MenuItem onClick={homeClick}>Marketplace</MenuItem>
-                  <MenuItem onClick={stakeClick}>Stake NFT</MenuItem>
-                  <MenuItem onClick={uploadClick}>Upload NFT</MenuItem>
-                  <MenuItem onClick={sellingClick}>Resell NFT</MenuItem>
                   <MenuItem onClick={() => {disconnectWallet(), homeClick(), toast({
           title: 'Wallet Disconnect.',
           description: "Wallet has been disconnected..",

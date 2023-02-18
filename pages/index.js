@@ -126,9 +126,13 @@ export default function Listings() {
             },
           }}>
       <Hover
-        perspective={1100}
-        max ={11}>
+        perspective={1000}
+        max ={35}>
                   <Image
+                    data-tilt data-tilt-max="25"
+                    data-tilt-speed="300"
+                    data-tilt-glare="true"
+                    data-tilt-gyroscope="true"
                     id="tilt"
                     src={`${listing.asset.image}`}
                     rounded={'lg'}

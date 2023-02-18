@@ -133,6 +133,10 @@ const bgColor = useColorModeValue('white', 'gray.800');
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} mt={'8'} maxW={1250}ml={'auto'} mr={'auto'}>
         <Flex justify={'center'} overflow={'hidden'} borderRadius={'6'}>
           <Image className={css.bounceInRight}
+            data-tilt data-tilt-max="35"
+            data-tilt-speed="1000"
+            data-tilt-glare="true"
+            data-tilt-gyroscope="true"
             h={500}
             maxW={'auto'}
             rounded={'md'}
@@ -143,9 +147,11 @@ const bgColor = useColorModeValue('white', 'gray.800');
             transform={{ base: 'matrix(0.99, 0.15, -0.15, 0.99, 0, 0);', md: 'matrix(0.99, -0.15, 0.15, 0.99, 0, 0);' }}
           />
 <div className={css.miring}>
-      <Hover
-        perspective={500}
-        max ={6}>
+          <Hover
+            perspective={1000}
+            max ={35}
+            data-tilt-glare="true"
+            data-tilt-gyroscope="true">
           <Image className={css.bounceInLeft}
             h={500}
             w={'100%'}
