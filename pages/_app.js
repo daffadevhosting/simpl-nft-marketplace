@@ -37,8 +37,8 @@ function MyApp({ Component, pageProps }) {
 			<ScrollToTop />
       <Component {...pageProps} />
     </ChakraProvider>
-<Script type="text/javascript" src="js/gyro.js"></Script>
-<Script type="text/javascript" src="js/vanilla-tilt.min.js"></Script>
+<Script type="text/javascript" src="/js/gyro.js"></Script>
+<Script type="text/javascript" src="/js/vanilla-tilt.min.js"></Script>
     </ThirdwebProvider>
   );
 }
