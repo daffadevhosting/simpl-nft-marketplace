@@ -36,4 +36,4 @@ yarn-error.log*
 
 # gulp
 gulpfile.js
-/_sass
+/_style-sass
