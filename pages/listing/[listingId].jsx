@@ -35,6 +35,7 @@ import Loading from "../../components/Spinner";
 import css from "../../styles/css.module.css";
 import React, { ReactElement, useContext, useState, useRef } from "react";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import { ChainName } from '../../const/aLinks';
 import Footer from "../../components/Footer";
 
@@ -163,6 +164,10 @@ export default function ListingPage() {
         perspective={1100}
         max ={11}>
           <MediaRenderer
+            data-tilt data-tilt-max="11"
+            data-tilt-speed="100"
+            data-tilt-glare="true"
+            data-tilt-gyroscope="true"
             className={css.objectCover}
             src={listing.asset.image}
             objectFit={'cover'}
@@ -253,6 +258,7 @@ export default function ListingPage() {
     </Container>
 <LoginModal />
       <Footer />
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js" integrity="sha512-RX/OFugt/bkgwRQg4B22KYE79dQhwaPp2IZaA/YyU3GMo/qY7GrXkiG6Dvvwnds6/DefCfwPTgCXnaC6nAgVYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></Script>
 </>
   );
 }

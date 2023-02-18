@@ -2,7 +2,7 @@
 
 ### feature
 
-- Gyroscope. (phone only) ###### *MAINTENANCE
+- Gyroscope. (phone only / install webApp)
 - Staking Nft.
 - Upload Nft.
 - Resell Nft.
