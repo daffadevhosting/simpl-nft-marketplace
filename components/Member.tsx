@@ -162,7 +162,7 @@ const bgColor = useColorModeValue('white', 'gray.800');
             objectFit={'cover'}
             _hover={{
             transform: 'matrix(0.99, 0.15, -0.15, 0.99, 0, 0) scale(1.3)',
-            transition: 'all .8s ease'
+            transition: 'all .8s ease-in-out'
                     }}
           />
       </Hover>

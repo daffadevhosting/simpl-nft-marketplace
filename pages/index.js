@@ -109,7 +109,7 @@ export default function Listings() {
           pos={'relative'}
           height={{ base: 'auto', md: 230 }}
           _after={{
-            transition: 'all .3s ease',
+            transition: 'all .3s ease-in-out',
             content: '""',
             w: 'full',
             h: 'full',
