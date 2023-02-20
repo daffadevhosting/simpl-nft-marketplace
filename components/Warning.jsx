@@ -7,14 +7,14 @@ export default function Warning() {
   return (
     <Box textAlign="center" py={20} px={10} h={'100vh'}>
 <div className={css.loading}>
-      <Box display="inline-block">
-          <Hover
-            perspective={1100}
-            max ={35}
+      <Box display="inline-block"
             data-tilt data-tilt-max="35"
             data-tilt-speed="1000"
             data-tilt-glare="true"
             data-tilt-gyroscope="true">
+          <Hover
+            perspective={1100}
+            max ={35}>
             <Flex className={css.slideInUp}
               flexDirection="column"
               justifyContent="center"

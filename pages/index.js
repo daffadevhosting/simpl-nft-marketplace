@@ -91,6 +91,10 @@ export default function Listings() {
                   className={css.nftBox}
                   key={listing.id.toString()}
                   href={`/listing/${listing.id}`}
+                  data-tilt data-tilt-max="50"
+                  data-tilt-speed="400"
+                  data-tilt-glare="true"
+                  data-tilt-gyroscope="true"
                 >
       <Box
         role={'group'}
@@ -129,10 +133,6 @@ export default function Listings() {
         perspective={1000}
         max ={35}>
                   <Image
-                    data-tilt data-tilt-max="25"
-                    data-tilt-speed="300"
-                    data-tilt-glare="true"
-                    data-tilt-gyroscope="true"
                     id="tilt"
                     src={`${listing.asset.image}`}
                     rounded={'lg'}
