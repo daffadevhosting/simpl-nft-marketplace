@@ -159,21 +159,22 @@ export default function ListingPage() {
 <>
     <Container maxW={'5xl'} py={12} mt={{ base: 8, md: 50 }}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-        <Flex maxH={{ base: 361, md: 476 }} h={'100%'}
-            data-tilt data-tilt-max="35"
+          <Flex maxH={{ base: 361, md: 476 }} h={'100%'}>
+        <div data-tilt data-tilt-max="35"
             data-tilt-speed="1000"
             data-tilt-glare="true"
             data-tilt-gyroscope="true">
-      <Hover
-        perspective={1100}
-        max ={35}>
-          <MediaRenderer
-            className={css.objectCover}
-            src={listing.asset.image}
-            objectFit={'cover'}
-            alt={'NFT image'}
-          />
-      </Hover>
+            <Hover
+              perspective={1100}
+              max ={35}>
+                <MediaRenderer
+                  className={css.objectCover}
+                  src={listing.asset.image}
+                  objectFit={'cover'}
+                  alt={'NFT image'}
+                />
+            </Hover>
+      </div>
         </Flex>
         <Stack spacing={4}>
           <Text

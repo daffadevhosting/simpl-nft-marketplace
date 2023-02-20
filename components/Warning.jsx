@@ -10,7 +10,6 @@ export default function Warning() {
       <Box display="inline-block"
             data-tilt data-tilt-max="35"
             data-tilt-speed="1000"
-            data-tilt-glare="true"
             data-tilt-gyroscope="true">
           <Hover
             perspective={1100}

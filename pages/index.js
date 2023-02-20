@@ -91,12 +91,12 @@ export default function Listings() {
                   className={css.nftBox}
                   key={listing.id.toString()}
                   href={`/listing/${listing.id}`}
-                  data-tilt data-tilt-max="50"
-                  data-tilt-speed="400"
-                  data-tilt-glare="true"
-                  data-tilt-gyroscope="true"
                 >
       <Box
+        data-tilt data-tilt-max="50"
+        data-tilt-speed="400"
+        data-tilt-glare="true"
+        data-tilt-gyroscope="true"
         role={'group'}
         p={{ base: 2, md: 0 }}
         maxW={'330px'}
