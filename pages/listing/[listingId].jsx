@@ -159,11 +159,11 @@ export default function ListingPage() {
 <>
     <Container maxW={'5xl'} py={12} mt={{ base: 8, md: 50 }}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-          <Flex maxH={{ base: 361, md: 476 }} h={'100%'}>
         <div data-tilt data-tilt-max="35"
             data-tilt-speed="1000"
             data-tilt-glare="true"
             data-tilt-gyroscope="true">
+          <Flex maxH={{ base: 361, md: 476 }} h={'100%'}>
             <Hover
               perspective={1100}
               max ={35}>
@@ -174,8 +174,8 @@ export default function ListingPage() {
                   alt={'NFT image'}
                 />
             </Hover>
-      </div>
         </Flex>
+      </div>
         <Stack spacing={4}>
           <Text
             textTransform={'uppercase'}
