@@ -39,7 +39,7 @@ export default function Banner() {
             <div className={`${css.star} ${css.star6}`}></div>
             <div className={`${css.star} ${css.star7}`}></div>
             <div className={`${css.star} ${css.star8}`}></div>
-        <Stack className={css.bannerText} maxW={'2xl'} align={'center'} spacing={6}>
+        <Stack className={`${css.bannerText}`} maxW={'2xl'} align={'center'} spacing={6}>
           <Text className={css.slideInLeft}
             fontWeight={700}
             lineHeight={1.5}

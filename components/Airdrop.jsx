@@ -10,9 +10,7 @@ export default function Airdrop() {
 return (
     <div className={css.boxAirdrop} data-tilt data-tilt-max="25" data-tilt-speed="400" data-tilt-glare="true" data-tilt-gyroscope="true">
     <div className={`${css.little_box} ${css.bg}`}></div>
-    <div className={`${css.little_box} ${css.imgBox}`}>
-        <Image src="undercont.png" width={226} height={226} alt=''/>
-    </div>
+    <div className={`${css.little_box} ${css.imgBox}`}></div>
     <div className={`${css.little_box} ${css.desc}`}>
         <h1>NFTdrop page on development</h1>
     </div>
