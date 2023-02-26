@@ -22,12 +22,13 @@ export default function Banner() {
   const { data: contractMetadata, isLoading: loadingMetadata } =
     useContractMetadata(marketplace);
   return (
-    <Flex
+    <Flex className={`${css.bannerContaint}`}
       position={'fixed'}
       w={'full'}
       h={{ base: '30vh', md: '90vh' }}
+      animation={'animate 8s ease-in-out infinite, bgMove 16s linear infinite'}
       backgroundImage={
-        'url(https://www.myrelatedlife.com/app/uploads/2022/01/NFT-1-copy-1196x445-1300x445-c-default-1300x445-c-default.jpg)'
+        'url(./stars.png)'
       }
       backgroundSize={'cover'}
       backgroundPosition={'center center'}
@@ -37,7 +38,7 @@ export default function Banner() {
         justify={'center'}
         px={useBreakpointValue({ base: 4, md: 8 })}
         bgGradient={'linear(to-r, blackAlpha.600, transparent)'}>
-        <Stack maxW={'2xl'} align={'center'} spacing={6}>
+        <Stack className={css.bannerText} maxW={'2xl'} align={'center'} spacing={6}>
           <Text className={css.slideInLeft}
             color={'white'}
             fontWeight={700}

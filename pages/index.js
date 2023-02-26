@@ -41,7 +41,7 @@ export default function Listings() {
   return (
 <>
     <div className={css.container}>
-        <div className={css.bannerContainer}>
+        <div className={css.bannerContainer} data-tilt data-tilt-max="10" data-tilt-speed="100" data-tilt-gyroscope="true">
           {!loadingMetadata ? (
             <>
                 <Banner />

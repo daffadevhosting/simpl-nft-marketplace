@@ -11,10 +11,10 @@ return (
     <div className={css.boxAirdrop} data-tilt data-tilt-max="25" data-tilt-speed="400" data-tilt-glare="true" data-tilt-gyroscope="true">
     <div className={`${css.little_box} ${css.bg}`}></div>
     <div className={`${css.little_box} ${css.imgBox}`}>
-        <img src="simpl.png"/>
+        <img src="undercont.png"/>
     </div>
     <div className={`${css.little_box} ${css.desc}`}>
-        <h2>SimPL member only</h2>
+        <h1>NFTdrop page on development</h1>
     </div>
     <div className={css.card}>
     </div>

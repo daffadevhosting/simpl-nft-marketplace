@@ -43,12 +43,25 @@ body {
 .active {
     background: rgba(255, 255, 255, 0.52);
     border-radius: 6px;
-    color: #e2ff00 !important;
+    color: #161c25 !important;
     text-shadow: 0 0 20px rgb(0 0 0 / 50%);
     text-decoration: none !important;
     box-shadow: 0px 2px 3px rgb(0 0 0 / 7%), 0px 6px 6px rgb(0 0 0 / 4%), 0px 12px 12px rgb(0 0 0 / 3%), 0px 20px 24px rgb(0 0 0 / 3%), 0px 32px 40px rgb(0 0 0 / 2%), 0px 80px 100px rgb(0 0 0 / 16%), 0px 0px 4px rgb(0 0 0 / 8%), 0px 8px 48px rgb(0 0 0 / 8%);
 
 }
+
+@keyframes bgMove {
+0% {
+transform: scale(1);
+    }
+50% {
+transform: scale(2);
+    }
+100% {
+transform: scale(1);
+    }
+}
+
 
 .hover-3d {
     width: -webkit-fill-available;
