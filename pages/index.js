@@ -93,8 +93,8 @@ export default function Listings() {
                   href={`/listing/${listing.id}`}
                 >
       <Box
-        data-tilt data-tilt-max="35"
-        data-tilt-speed="1000"
+        data-tilt data-tilt-max="15"
+        data-tilt-speed="200"
         data-tilt-glare="true"
         data-tilt-gyroscope="true"
         role={'group'}
