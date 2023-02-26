@@ -163,10 +163,10 @@ export default function ListingPage() {
             data-tilt-speed="1000"
             data-tilt-glare="true"
             data-tilt-gyroscope="true">
-          <Flex maxH={{ base: 361, md: 476 }} h={'100%'}>
+          <Flex maxH={{ base: 361, md: 476 }} h={'100%'} data-tilt data-tilt-max="25" data-tilt-speed="200" data-tilt-glare="true" data-tilt-gyroscope="true">
             <Hover
-              perspective={1100}
-              max ={35}>
+              perspective={1000}
+              max ={25}>
                 <MediaRenderer
                   className={css.objectCover}
                   src={listing.asset.image}

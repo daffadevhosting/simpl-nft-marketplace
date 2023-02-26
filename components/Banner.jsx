@@ -22,25 +22,27 @@ export default function Banner() {
   const { data: contractMetadata, isLoading: loadingMetadata } =
     useContractMetadata(marketplace);
   return (
-    <Flex className={`${css.bannerContaint} ${css.bgMove}`}
+    <Flex className={`${css.bannerContaint} ${css.starSection}`}
       position={'fixed'}
       w={'full'}
-      h={{ base: '30vh', md: '90vh' }}
-      backgroundImage={
-        'url(./stars.png)'
-      }
       backgroundSize={'cover'}
       backgroundPosition={'center center'}
       top={'64px'}>
-      <VStack style={{ backgroundImage: 'none' }}
+      <VStack
         w={'full'}
-        justify={'center'}
-        px={useBreakpointValue({ base: 4, md: 8 })}
-        bgGradient={'linear(to-r, blackAlpha.600, transparent)'}>
+        justify={'center'}>
+            <div className={`${css.star} ${css.star1}`}></div>
+            <div className={`${css.star} ${css.star2}`}></div>
+            <div className={`${css.star} ${css.star3}`}></div>
+            <div className={`${css.star} ${css.star4}`}></div>
+            <div className={`${css.star} ${css.star5}`}></div>
+            <div className={`${css.star} ${css.star6}`}></div>
+            <div className={`${css.star} ${css.star7}`}></div>
+            <div className={`${css.star} ${css.star8}`}></div>
         <Stack className={css.bannerText} maxW={'2xl'} align={'center'} spacing={6}>
           <Text className={css.slideInLeft}
             fontWeight={700}
-            lineHeight={1.2}
+            lineHeight={1.5}
             fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}>
               {contractMetadata?.name}
           </Text>

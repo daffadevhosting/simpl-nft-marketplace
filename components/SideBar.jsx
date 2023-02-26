@@ -74,10 +74,10 @@ export default function SideBar() {
         variant="outline"
         onClick={onOpen}
         aria-label="open menu"
-        icon={<FiMenu color={'white'} />}
+        icon={<FiMenu />}
       />
 </div>
-          <Box onClick={homeClick} cursor={'pointer'} fontSize={'lg'} fontWeight={700} color={'white'}>{Title}</Box>
+          <Box onClick={homeClick} cursor={'pointer'} fontSize={'lg'} fontWeight={700}>{Title}</Box>
 </Flex>
       <Drawer
         isOpen={isOpen}

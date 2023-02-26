@@ -30,6 +30,8 @@ body {
   font-family: var(--font);
   color: var(--text-color);
   margin: 0;
+  width:100%;
+  min-height:100vh;
   text-align: center;
 }
 

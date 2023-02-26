@@ -86,7 +86,7 @@ const nftdrop = dropUrl;
   
   return (
     <>
-      <Box bg={'backdrop-filter: blur(5px); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);'} px={4} style={{position: 'fixed', width: '100%', top: 0}}zIndex={1}>
+      <Box bg={'rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);'} px={4} style={{position: 'fixed', width: '100%', top: 0}}zIndex={1}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
 <SideMenu />
 
