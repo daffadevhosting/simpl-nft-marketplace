@@ -41,7 +41,7 @@ export default function Listings() {
   return (
 <>
     <div className={css.container}>
-<section>
+<section className={css.section}>
     <span className="span"></span>
     <span className="span"></span>
     <span className="span"></span>
