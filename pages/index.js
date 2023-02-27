@@ -41,7 +41,12 @@ export default function Listings() {
   return (
 <>
     <div className={css.container}>
-        <div className={css.bannerContainer} data-tilt data-tilt-max="15" data-tilt-speed="150" data-tilt-gyroscope="true">
+<section>
+    <span className="span"></span>
+    <span className="span"></span>
+    <span className="span"></span>
+</section>
+        <div className={css.bannerContainer} data-tilt data-tilt-max="10" data-tilt-speed="100" data-tilt-gyroscope="true">
 <div className={`${css.bannerCover} ${css.bannerCover1}`}></div>
 <div className={`${css.bannerCover} ${css.bannerCover2}`}></div>
 <div className={`${css.bannerCover} ${css.bannerCover3}`}></div>
