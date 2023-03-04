@@ -138,10 +138,10 @@ export const swapUrl = () => {
   switch (process.env.NEXT_PUBLIC_CHAIN_ID) {
     case '97':
       // Testnet
-      return `https://pancakeswap.finance/swap?inputCurrency=${token}&exactField=output&exactAmount=10&outputCurrency=tBNB&chainId=${chain}&chain=bscTestnet`
+      return `https://pancakeswap.finance/swap?inputCurrency=${token}&exactField=input&exactAmount=1&outputCurrency=tBNB&chainId=${chain}&chain=bscTestnet`
     case '56':
       // Mainnet
-      return `https://pancakeswap.finance/swap?inputCurrency=${token}&exactField=output&exactAmount=10&outputCurrency=BNB&chainId=${chain}&chain=bsc`
+      return `https://pancakeswap.finance/swap?inputCurrency=${token}&exactField=input&exactAmount=1&outputCurrency=BNB&chainId=${chain}&chain=bsc`
     case '137':
       // Mainnet
       return `https://app.uniswap.org/#/swap?inputCurrency=eth&exactField=output&exactAmount=10&outputCurrency=${token}&chainId=${chain}`
