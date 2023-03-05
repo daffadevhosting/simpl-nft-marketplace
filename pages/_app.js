@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 import Header from "../components/Navbar";
 import NewsBar from "../components/News";
+import Disclaimer from "../components/Popup";
 import ScrollToTop from '../components/ScrollToTop';
 import "../styles/globals.css";
 
@@ -35,6 +36,7 @@ function MyApp({ Component, pageProps }) {
 <meta property="og:image" content="/icons/fav/apple-touch-icon.png" />
       </Head>
       <NewsBar />
+        <Disclaimer />
       <Header />
 			<ScrollToTop />
       <Component {...pageProps} />
