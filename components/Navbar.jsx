@@ -130,9 +130,11 @@ const nftdrop = dropUrl;
 </Tooltip>
 </div>
 <div style={{ display: 'flex', alignItems: 'center', gap: 13, padding: '10px 0' }}>
-  <Link href={openseaLink()} target="_blank" rel="noopener noreferrer" title="OpenSea" style={{height: 30,}}>
+<Tooltip hasArrow className={css.pulse} label='OpenSea' bg='blue.600' color='white' placement='bottom'>
+  <Link href={openseaLink()} target="_blank" rel="noopener noreferrer" style={{height: 30,}}>
 				<Image src={Logo} width={30} height={30} alt="logo" />
  </Link>
+</Tooltip>
               <Button onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MoonIcon size={32} /> : <SunIcon size={32} />}
               </Button>

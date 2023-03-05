@@ -48,7 +48,7 @@ export default function HowTo() {
         What can you do on website?
       </chakra.h1>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }} mt={{ base: 0, md: 65 }}>
-        <StatsCard icon={<RiHandCoinLine size={56} color={'#0052ff'}/>} title={'Staking NFT'} stat={'Stake your NFT at tBNB testnet and earn reward token from it.'} />
+        <StatsCard icon={<RiHandCoinLine size={56} color={'#0052ff'}/>} title={'Staking NFT'} stat={'Stake your NFT at tBNB testnet and earn SimPL token from your stake.'} />
         <StatsCard icon={<RiUpload2Line size={56} color={'#0052ff'}/>} title={'Upload NFT'} stat={'Upload your NFTs and set a title, description and price.'} />
         <StatsCard icon={<RiRefundFill size={56} color={'#0052ff'}/>} title={'List for sale'} stat={'Earn tBNB for all your NFTs that you sell on our marketplace.'} />
       </SimpleGrid>
