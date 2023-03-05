@@ -4,6 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import Head from 'next/head';
 import Script from 'next/script';
 import Header from "../components/Navbar";
+import NewsBar from "../components/News";
 import ScrollToTop from '../components/ScrollToTop';
 import "../styles/globals.css";
 
@@ -33,6 +34,7 @@ function MyApp({ Component, pageProps }) {
 <meta property="og:url" content="/" />
 <meta property="og:image" content="/icons/fav/apple-touch-icon.png" />
       </Head>
+      <NewsBar />
       <Header />
 			<ScrollToTop />
       <Component {...pageProps} />
