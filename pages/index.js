@@ -51,6 +51,7 @@ export default function Listings() {
 <div className={`${css.bannerCover} ${css.bannerCover1}`}></div>
 <div className={`${css.bannerCover} ${css.bannerCover2}`}></div>
 <div className={`${css.bannerCover} ${css.bannerCover3}`}></div>
+<div className={`${css.bannerCover} ${css.bannerCover4}`}></div>
           {!loadingMetadata ? (
             <>
                 <Banner />

@@ -21,7 +21,7 @@ function handleCloseBar() {
 <>
       {isVisible && (
 <div id="newsBar" className={css.newsBar}>
-<span className={css.simplFlex}><Image src={SimPL} width={18} height={18} alt="SimPL" /> <b>SimPL</b> tokens, are now available for swap on</span> <Link href={swapUrl()} className={css.linkNews} target="_blank" rel="noopener noreferrer" title="Swap SimPL Token"> <Image src={Logo} width={18} height={18} alt="pancakeswap" /> <b>PancakeSwap</b></Link>
+<span><b>SimPL</b> tokens, are now available for swap on</span> <Link href={swapUrl()} className={css.linkNews} color="turquoise" target="_blank" rel="noopener noreferrer" title="Swap SimPL Token"> <Image src={Logo} width={18} height={18} alt="pancakeswap" /> <b>PancakeSwap</b></Link>
 <span className={css.closeBtn} onClick={handleCloseBar}>&times;</span>
 </div>
       )}
