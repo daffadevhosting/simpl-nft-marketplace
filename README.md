@@ -6,7 +6,7 @@
 - Staking Nft.
 - Upload Nft.
 - Resell Nft.
-- Nft Airdrop.
+- Nft Airdrop. (on developed)
 
 ### Tech 
 
