@@ -38,7 +38,7 @@ import { ChainName, memberUrl } from "../const/aLinks";
 import Footer from "../components/Footer";
 import css from "../styles/css.module.css";
 
-  const IMAGE = './simpl.png';
+  const IMAGE = './simpl.webp';
   const Logo = "/icons/opensea.svg"
   const price = MEMBER_CARD_PRICE
   const tokenId = 0;
