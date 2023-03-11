@@ -7,7 +7,7 @@ const networkName = "NETWORK_CHAIN_NAME"
 export default async function generateMintSignature(req, res) {
   // De-construct body from request
   let { address, name, description, image } = JSON.parse(req.body);
-  const sdk = ThirdwebSDK.fromPrivateKey(process.env.PRIVATE_KEY, NETWORK_CHAIN_NAME);
+  const sdk = ThirdwebSDK.fromPrivateKey(process.env.PRIVATE_KEY, "binance-testnet");
 
   const nftContract = await sdk.getContract(
     NFT_COLLECTION_ADDRESS,
